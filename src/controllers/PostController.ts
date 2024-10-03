@@ -23,12 +23,6 @@ class PostController{
     async createPost(req: Request, res: Response){
         try{
             const postData = req.body
-            if(!postData.content){
-                res.status(400).json({
-                    status: 400,
-                    message: "O post deve possuir um conteudo",
-                });
-            }
             const newPost = await prisma.post.create({
                 data: postData,
             });

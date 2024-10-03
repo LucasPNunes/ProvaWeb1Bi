@@ -6,9 +6,9 @@ import UserRouter from "./routes/UserRoutes";
 const app = express(); 
 
 app.use(express.json());
-app.use("/api", UserRouter);
-app.use("/api", CommentRouter);
-app.use("/api", PostRouter);
+app.use(UserRouter);
+app.use(CommentRouter);
+app.use(PostRouter);
 
 app.listen(3000, function () {
     console.log("Servidor rodando na porta 3000");
